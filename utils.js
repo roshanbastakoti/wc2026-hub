@@ -1,4 +1,4 @@
-export function toLocalTime(dateStr, timeStr, sourceTimezone = 'America/New_York') {
+export function toLocalTime(dateStr, timeStr, sourceTimezone = 'UTC') {
   if (!/^\d{2}:\d{2}$/.test(timeStr)) {
     const sourceDate = new Date(`${dateStr}T00:00:00`);
     const dateLabel = new Intl.DateTimeFormat('en-US', {
@@ -8,12 +8,8 @@ export function toLocalTime(dateStr, timeStr, sourceTimezone = 'America/New_York
     return `${dateLabel} · ${timeStr}`;
   }
 
-  // dateStr = '2026-06-11', timeStr = '20:00'
-  const dt = new Date(`${dateStr}T${timeStr}:00`);
-
-  // Adjust from ET to UTC (ET is UTC-4 in June)
-  const etOffsetMs = 4 * 60 * 60 * 1000;
-  const utc = new Date(dt.getTime() + etOffsetMs);
+  // dateStr = '2026-06-11', timeStr = '23:00'
+  const utc = new Date(`${dateStr}T${timeStr}:00Z`);
 
   const userTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
 

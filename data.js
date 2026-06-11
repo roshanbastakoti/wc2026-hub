@@ -13,7 +13,7 @@ export const tournamentInfo = {
     venue: 'MetLife Stadium, New Jersey',
     dateStr: '2026-07-19',
     date: 'July 19',
-    time: '15:00'
+    time: '19:00'
   },
   advancement: 'Top 2 per group plus the 8 best 3rd-place teams advance to the Round of 32.'
 };
@@ -134,7 +134,7 @@ export const schedule = [
     id: 'mex-rsa-2026-06-11',
     date: '2026-06-11',
     displayDate: 'June 11',
-    time: '20:00',
+    time: '23:00',
     stage: 'Group Stage',
     home: 'Mexico',
     homeFlag: '🇲🇽',
@@ -147,7 +147,7 @@ export const schedule = [
     id: 'kor-cze-2026-06-12',
     date: '2026-06-12',
     displayDate: 'June 12',
-    time: '17:00',
+    time: '21:00',
     stage: 'Group Stage',
     home: 'South Korea',
     homeFlag: '🇰🇷',
@@ -157,10 +157,10 @@ export const schedule = [
     status: 'UPCOMING'
   },
   {
-    id: 'can-qat-2026-06-12',
-    date: '2026-06-12',
-    displayDate: 'June 12',
-    time: '20:00',
+    id: 'can-qat-2026-06-13',
+    date: '2026-06-13',
+    displayDate: 'June 13',
+    time: '00:00',
     stage: 'Group Stage',
     home: 'Canada',
     homeFlag: '🇨🇦',
@@ -173,7 +173,7 @@ export const schedule = [
     id: 'usa-aus-2026-06-13',
     date: '2026-06-13',
     displayDate: 'June 13',
-    time: '19:00',
+    time: '23:00',
     stage: 'Group Stage',
     home: 'USA',
     homeFlag: '🇺🇸',
@@ -183,10 +183,10 @@ export const schedule = [
     status: 'UPCOMING'
   },
   {
-    id: 'bra-hai-2026-06-13',
-    date: '2026-06-13',
-    displayDate: 'June 13',
-    time: '21:00',
+    id: 'bra-hai-2026-06-14',
+    date: '2026-06-14',
+    displayDate: 'June 14',
+    time: '01:00',
     stage: 'Group Stage',
     home: 'Brazil',
     homeFlag: '🇧🇷',
@@ -199,7 +199,7 @@ export const schedule = [
     id: 'fra-irq-2026-06-14',
     date: '2026-06-14',
     displayDate: 'June 14',
-    time: '18:00',
+    time: '22:00',
     stage: 'Group Stage',
     home: 'France',
     homeFlag: '🇫🇷',
@@ -209,10 +209,10 @@ export const schedule = [
     status: 'UPCOMING'
   },
   {
-    id: 'arg-jor-2026-06-14',
-    date: '2026-06-14',
-    displayDate: 'June 14',
-    time: '21:00',
+    id: 'arg-jor-2026-06-15',
+    date: '2026-06-15',
+    displayDate: 'June 15',
+    time: '01:00',
     stage: 'Group Stage',
     home: 'Argentina',
     homeFlag: '🇦🇷',
@@ -222,10 +222,10 @@ export const schedule = [
     status: 'UPCOMING'
   },
   {
-    id: 'por-uzb-2026-06-15',
-    date: '2026-06-15',
-    displayDate: 'June 15',
-    time: '20:00',
+    id: 'por-uzb-2026-06-16',
+    date: '2026-06-16',
+    displayDate: 'June 16',
+    time: '00:00',
     stage: 'Group Stage',
     home: 'Portugal',
     homeFlag: '🇵🇹',
@@ -290,7 +290,7 @@ export const schedule = [
     id: 'final-2026-07-19',
     date: '2026-07-19',
     displayDate: 'July 19',
-    time: '15:00',
+    time: '19:00',
     stage: 'Final',
     home: 'Semi-final winner',
     homeFlag: '🏆',
