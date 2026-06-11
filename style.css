@@ -546,45 +546,155 @@ main {
 }
 
 @media (max-width: 760px) {
-  .hero,
-  .info-band,
-  .toolbar {
+  .hero {
     grid-template-columns: 1fr;
+    padding-top: 20px;
+    padding-bottom: 16px;
+    gap: 16px;
   }
 
-  .hero {
-    padding-top: 24px;
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-card {
+    display: none;
   }
 
   .tabs {
+    gap: 6px;
     padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 0.85rem;
+  }
+
+  main {
+    padding: 16px 0 40px;
   }
 
   .section-heading,
   .action-heading {
     align-items: stretch;
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .section-heading h2,
+  .action-heading h2 {
+    font-size: 1.6rem;
   }
 
   .action-heading .primary-btn {
     width: 100%;
+    justify-content: center;
+  }
+
+  .info-band {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .match-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .group-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .group-card {
+    padding: 14px;
+  }
+
+  .group-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .schedule-list {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .versus {
+    grid-template-columns: 1fr auto 1fr;
+    font-size: 1rem;
+    gap: 8px;
+    margin: 14px 0 10px;
+  }
+
+  .versus span:last-child {
+    text-align: right;
+  }
+
+  .score-dash {
+    font-size: 1.4rem;
+    min-width: 32px;
+  }
+
+  .bracket-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .probability-panel {
+    padding: 14px;
+  }
+
+  .prob-meta {
+    grid-template-columns: 1fr auto;
+    gap: 6px;
+  }
+
+  .prob-meta small:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .match-card,
+  .schedule-card {
+    padding: 14px;
+  }
+
+  .primary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ai-result {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .group-grid {
+    grid-template-columns: 1fr;
   }
 
   .info-grid {
     grid-template-columns: 1fr;
   }
 
-  .versus {
-    grid-template-columns: 1fr;
-    text-align: left;
-  }
-
-  .versus span:last-child {
-    text-align: left;
-  }
-
-  .score-dash,
-  .versus.compact strong {
-    width: 54px;
+  .hero h1 {
+    font-size: 1.9rem;
   }
 }

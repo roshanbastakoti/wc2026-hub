@@ -18,13 +18,14 @@ export function toLocalTime(dateStr, timeStr, sourceTimezone = 'America/New_York
   const userTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   return new Intl.DateTimeFormat('en-US', {
+    weekday: 'short',
     month: 'short',
     day: 'numeric',
     hour: 'numeric',
     minute: '2-digit',
     hour12: true,
     timeZone: userTZ,
-    timeZoneName: 'short'
+    timeZoneName: 'shortGeneric'
   }).format(utc);
 }
 
