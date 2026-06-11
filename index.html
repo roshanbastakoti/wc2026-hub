@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA World Cup 2026 Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="hero">
+        <div>
+          <span class="eyebrow">FIFA World Cup 2026</span>
+          <h1>World Cup Hub</h1>
+          <p>Live scores, group standings, fixtures, forecasts, and bracket predictions for the first 48-team tournament.</p>
+        </div>
+        <div class="hero-card" aria-label="Tournament facts">
+          <span>June 11 - July 19</span>
+          <strong>104 matches</strong>
+          <small>16 stadiums · USA, Canada, Mexico</small>
+        </div>
+      </div>
+      <nav class="tabs" aria-label="World Cup sections">
+        <button class="tab-btn active" type="button" data-tab="scores" aria-selected="true">Live Scores</button>
+        <button class="tab-btn" type="button" data-tab="groups" aria-selected="false">Groups</button>
+        <button class="tab-btn" type="button" data-tab="schedule" aria-selected="false">Schedule</button>
+        <button class="tab-btn" type="button" data-tab="probability" aria-selected="false">Win Probability</button>
+        <button class="tab-btn" type="button" data-tab="bracket" aria-selected="false">Bracket</button>
+      </nav>
+    </header>
+    <main>
+      <div id="tab-content" class="tab-content is-visible"></div>
+    </main>
+  </body>
+</html>
