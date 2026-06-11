@@ -68,7 +68,7 @@ async function handleScoreUpdate(button, match, container) {
   button.disabled = true;
 
   try {
-    const prompt = `Search for the latest live score and match status for the FIFA World Cup 2026 match: ${match.home} vs ${match.away} on ${match.displayDate} at ${match.venue}. Provide: 1) The current score or "Not started yet" if it hasn't kicked off. 2) A 3-sentence summary of key events or pre-match context. Keep the total response under 100 words.`;
+    const prompt = `Search for the latest live score and match status for the FIFA World Cup 2026 match: ${match.home} vs ${match.away} on ${toLocalTime(match.date, match.time)} at ${match.venue}. Provide: 1) The current score or "Not started yet" if it hasn't kicked off. 2) A 3-sentence summary of key events or pre-match context. Keep the total response under 100 words.`;
     const text = await askClaudeWithSearch(prompt);
     const formatted = formatAiText(text);
     setCachedValue(`score-update:${match.id}`, { text: formatted });
