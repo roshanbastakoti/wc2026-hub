@@ -1,60 +1,27 @@
-const API_URL = 'https://api.anthropic.com/v1/messages';
+const PROXY_URL = '/api/proxy';
 
-function getApiKey() {
-  return window.CONFIG?.ANTHROPIC_API_KEY || '';
+export async function askClaude(prompt) {
+  return callProxy(prompt, false);
 }
 
-function ensureApiKey() {
-  const key = getApiKey();
-  if (!key || key === 'PASTE_KEY_HERE') {
-    throw new Error('Add your Anthropic API key to config.js before using AI updates.');
-  }
-  return key;
+export async function askClaudeWithSearch(prompt) {
+  return callProxy(prompt, true);
 }
 
-async function callClaude(prompt, useSearch = false) {
-  const apiKey = ensureApiKey();
-  const body = {
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 1024,
-    messages: [
-      {
-        role: 'user',
-        content: prompt
-      }
-    ]
-  };
-
-  if (useSearch) {
-    body.tools = [{ type: 'web_search_20250305', name: 'web_search' }];
-  }
-
-  const response = await fetch(API_URL, {
+async function callProxy(prompt, useSearch) {
+  const response = await fetch(PROXY_URL, {
     method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true'
-    },
-    body: JSON.stringify(body)
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ prompt, useSearch })
   });
 
   if (!response.ok) {
-    const message = await response.text();
-    throw new Error(`Claude API request failed: ${response.status} ${message}`);
+    const err = await response.json().catch(() => ({ error: 'Request failed' }));
+    throw new Error(err.error || `Request failed: ${response.status}`);
   }
 
   const data = await response.json();
-  return data.content.filter((block) => block.type === 'text').map((block) => block.text).join(' ');
-}
-
-export function askClaude(prompt) {
-  return callClaude(prompt, false);
-}
-
-export function askClaudeWithSearch(prompt) {
-  return callClaude(prompt, true);
+  return data.text;
 }
 
 export function getCachedValue(key, maxAgeMs) {

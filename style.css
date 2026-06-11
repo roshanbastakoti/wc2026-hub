@@ -830,3 +830,89 @@ main {
     font-size: 1.9rem;
   }
 }
+
+/* === PASTE THESE AT THE BOTTOM OF YOUR style.css === */
+
+.support-banner {
+  margin-top: 40px;
+  padding: 28px;
+  border-radius: 12px;
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+}
+
+.support-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.support-text h3 {
+  margin: 6px 0 8px;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.support-text p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 520px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.bmc-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: opacity 150ms ease;
+  white-space: nowrap;
+}
+
+.bmc-btn:hover {
+  opacity: 0.88;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 24px 16px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .support-banner {
+    padding: 20px;
+    margin-top: 28px;
+  }
+
+  .support-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bmc-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

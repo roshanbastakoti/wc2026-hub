@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Add your production sitemap URL after deployment.
-# Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://wc2026-hub-pi.vercel.app/sitemap.xml
